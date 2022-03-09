@@ -9,14 +9,14 @@ public class TestaClasses {
 		Conta contaAna = new Conta();
 		Cliente ana = new Cliente();
 		
-		contaAna.titular = ana;
-		contaAna.titular.nome = "Ana";
-		System.out.println(ana.nome);
+		contaAna.setTitular(ana);
+		contaAna.getTitular().setNome("Ana");
+		System.out.println(ana.getNome());
 		
 		Conta contaJoao = new Conta();
 		
-		contaJoao.titular = new Cliente();
-		contaJoao.titular.nome = "João";
-		System.out.println(contaJoao.titular.nome);
+		contaJoao.setTitular(new Cliente());
+		contaJoao.getTitular().setNome("João");
+		System.out.println(contaJoao.getTitular().getNome());
 	}
 }

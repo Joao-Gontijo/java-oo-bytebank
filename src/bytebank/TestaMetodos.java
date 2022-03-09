@@ -8,19 +8,19 @@ public class TestaMetodos {
 		
 		Conta contaDoJoao = new Conta();
 		contaDoJoao.deposita(100);
-		System.out.println("Conta do João " + contaDoJoao.saldo);
+		System.out.println("Conta do João " + contaDoJoao.getSaldo());
 		
 		contaDoJoao.saca(50);
 		System.out.println("fazendo saque");
-		System.out.println("Conta do João " + contaDoJoao.saldo);
+		System.out.println("Conta do João " + contaDoJoao.getSaldo());
 		
 		Conta contaDaAna = new Conta();
 		contaDaAna.deposita(1000);
-		System.out.println("Conta da Ana " + contaDaAna.saldo);
+		System.out.println("Conta da Ana " + contaDaAna.getSaldo());
 		
 		contaDaAna.transfere(50, contaDoJoao);
 		System.out.println("Depois da transferencia");
-		System.out.println("Conta do João " + contaDoJoao.saldo);
-		System.out.println("Conta da Ana " + contaDaAna.saldo);
+		System.out.println("Conta do João " + contaDoJoao.getSaldo());
+		System.out.println("Conta da Ana " + contaDaAna.getSaldo());
 	}
 }
