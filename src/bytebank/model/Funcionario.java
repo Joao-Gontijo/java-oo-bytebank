@@ -1,12 +1,10 @@
 package bytebank.model;
 
-public class Funcionario extends Pessoa {
+public abstract class Funcionario extends Pessoa {
 	
 	private double salario;
 	
-	public double getBonificacao() {
-		return this.salario * 0.1;
-	}
+	public abstract double getBonificacao();
 
 	public double getSalario() {
 		return salario;

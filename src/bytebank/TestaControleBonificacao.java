@@ -11,7 +11,7 @@ public class TestaControleBonificacao {
 		gr.setSalario(1000);
 		System.out.println(gr.getBonificacao());
 		
-		Funcionario fc = new Funcionario();
+		Funcionario fc = new Gerente();
 		fc.setSalario(1000);
 		System.out.println(fc.getBonificacao());
 		
