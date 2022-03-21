@@ -1,12 +1,13 @@
 package bytebank;
 
 import bytebank.model.Conta;
+import bytebank.model.ContaCorrente;
 
 public class TestaMetodos {
 	
 	public static void main(String[] args) {
 		
-		Conta contaDoJoao = new Conta(1010, 55667);
+		Conta contaDoJoao = new ContaCorrente(1010, 55667);
 		contaDoJoao.deposita(100);
 		System.out.println("Conta do João " + contaDoJoao.getSaldo());
 		
@@ -14,7 +15,7 @@ public class TestaMetodos {
 		System.out.println("fazendo saque");
 		System.out.println("Conta do João " + contaDoJoao.getSaldo());
 		
-		Conta contaDaAna = new Conta(1020, 11234);
+		Conta contaDaAna = new ContaCorrente(1020, 11234);
 		contaDaAna.deposita(1000);
 		System.out.println("Conta da Ana " + contaDaAna.getSaldo());
 		

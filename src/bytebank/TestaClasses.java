@@ -2,11 +2,12 @@ package bytebank;
 
 import bytebank.model.Cliente;
 import bytebank.model.Conta;
+import bytebank.model.ContaCorrente;
 
 public class TestaClasses {
 	public static void main(String[] args) {
 		
-		Conta contaAna = new Conta(1930, 22345);
+		Conta contaAna = new ContaCorrente(1930, 22345);
 		Cliente ana = new Cliente();
 		
 		contaAna.setTitular(ana);
@@ -14,7 +15,7 @@ public class TestaClasses {
 		System.out.println(ana.getNome());
 		System.out.println(Conta.getTotal());
 		
-		Conta contaJoao = new Conta(1234, 22130);
+		Conta contaJoao = new ContaCorrente(1234, 22130);
 		
 		contaJoao.setTitular(new Cliente());
 		contaJoao.getTitular().setNome("João");
