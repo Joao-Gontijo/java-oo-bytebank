@@ -1,4 +1,4 @@
-package bytebank;
+package bytebank.testes;
 
 import bytebank.model.Conta;
 import bytebank.model.ContaCorrente;

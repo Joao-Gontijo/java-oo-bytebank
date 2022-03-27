@@ -1,4 +1,4 @@
-package bytebank.model;
+package bytebank.interfaces;
 
 public abstract interface Autenticavel {
 	

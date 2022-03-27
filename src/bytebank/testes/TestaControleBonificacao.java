@@ -1,5 +1,6 @@
-package bytebank;
+package bytebank.testes;
 
+import bytebank.ControleBonificacao;
 import bytebank.model.Faxineiro;
 import bytebank.model.Funcionario;
 import bytebank.model.Gerente;

@@ -1,6 +1,7 @@
 package bytebank.model;
 
 import bytebank.AutenticaUtil;
+import bytebank.interfaces.Autenticavel;
 
 public class Gerente extends Funcionario implements Autenticavel{
 	

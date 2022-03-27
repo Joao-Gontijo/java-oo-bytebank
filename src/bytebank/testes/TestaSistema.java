@@ -1,5 +1,6 @@
-package bytebank;
+package bytebank.testes;
 
+import bytebank.SistemaInterno;
 import bytebank.model.Gerente;
 
 public class TestaSistema {

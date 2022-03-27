@@ -1,6 +1,6 @@
 package bytebank;
 
-import bytebank.model.Autenticavel;
+import bytebank.interfaces.Autenticavel;
 import bytebank.model.Gerente;
 
 public class SistemaInterno {
