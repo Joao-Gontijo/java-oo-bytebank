@@ -1,10 +1,19 @@
 package bytebank.model;
 
+import bytebank.AutenticaUtil;
+
 public class Cliente extends Pessoa implements Autenticavel {
 	
 	private int senha;
 	private String profissao;
+	
+	private AutenticaUtil autenticador;
 
+	
+	public Cliente() {
+		this.autenticador = new AutenticaUtil();
+	}
+	
 	public String getProfissao() {
 		return profissao;
 	}
@@ -15,16 +24,12 @@ public class Cliente extends Pessoa implements Autenticavel {
 
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
-		
+		this.autenticador.setSenha(senha);
 	}
 
 	@Override
 	public boolean autentica(int senha) {
-		if(this.senha == senha) {
-			return true;
-		}
-		return false;
+		return this.autenticador.autentica(senha);
 	}
 
 }
