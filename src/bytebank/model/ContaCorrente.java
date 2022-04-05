@@ -1,5 +1,6 @@
 package bytebank.model;
 
+import bytebank.exception.SaldoInsuficienteException;
 import bytebank.interfaces.Tributavel;
 
 public class ContaCorrente extends Conta implements Tributavel{
@@ -9,14 +10,14 @@ public class ContaCorrente extends Conta implements Tributavel{
 	}
 	
 	@Override
-	public boolean saca(double valor) {
+	public void saca(double valor) throws SaldoInsuficienteException {
 		double valorASacar = valor + 0.2;
-		return super.saca(valorASacar);
+		super.saca(valorASacar);
 	}
 
 	@Override
 	public void deposita(double valor) {
-		super.saldo += valor - 0.5;
+		super.saldo += valor;
 	}
 
 	@Override

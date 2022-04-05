@@ -1,5 +1,6 @@
 package bytebank.testes;
 
+import bytebank.exception.SaldoInsuficienteException;
 import bytebank.model.Conta;
 import bytebank.model.ContaCorrente;
 
@@ -11,7 +12,11 @@ public class TestaMetodos {
 		contaDoJoao.deposita(100);
 		System.out.println("Conta do João " + contaDoJoao.getSaldo());
 		
-		contaDoJoao.saca(50);
+		try {
+			contaDoJoao.saca(50);
+		} catch (SaldoInsuficienteException e) {
+			e.printStackTrace();
+		}
 		System.out.println("fazendo saque");
 		System.out.println("Conta do João " + contaDoJoao.getSaldo());
 		
@@ -19,7 +24,11 @@ public class TestaMetodos {
 		contaDaAna.deposita(1000);
 		System.out.println("Conta da Ana " + contaDaAna.getSaldo());
 		
-		contaDaAna.transfere(50, contaDoJoao);
+		try {
+			contaDaAna.transfere(50, contaDoJoao);
+		} catch (SaldoInsuficienteException e) {
+			e.printStackTrace();
+		}
 		System.out.println("Depois da transferencia");
 		System.out.println("Conta do João " + contaDoJoao.getSaldo());
 		System.out.println("Conta da Ana " + contaDaAna.getSaldo());

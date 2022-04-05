@@ -1,5 +1,6 @@
 package bytebank.testes;
 
+import bytebank.exception.SaldoInsuficienteException;
 import bytebank.model.ContaCorrente;
 import bytebank.model.ContaPoupanca;
 
@@ -12,7 +13,11 @@ public class TesteContas {
 		ContaPoupanca cp = new ContaPoupanca(200, 200);
 		cp.deposita(200);
 		
-		cc.transfere(50, cp);
+		try {
+			cc.transfere(100, cp);
+		} catch (SaldoInsuficienteException e) {
+			System.out.println(e.getMessage());
+		}
 		System.out.println(cc.getSaldo());
 		System.out.println(cp.getSaldo());
 	}

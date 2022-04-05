@@ -1,6 +1,8 @@
 package bytebank.model;
 
-public abstract class Conta {
+import bytebank.exception.SaldoInsuficienteException;
+
+public abstract class Conta{
 	protected double saldo;
 	private int agencia;
 	private int numero;
@@ -16,21 +18,16 @@ public abstract class Conta {
 	
 	public abstract void deposita(double valor);
 		
-	public boolean saca(double valor) {
-		if(this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
+	public void saca(double valor) throws SaldoInsuficienteException {
+		if(this.saldo < valor) {
+			throw new SaldoInsuficienteException("Saldo " + this.saldo +  " insuficiente. " + valor + " é maior");
 		}
-		return false;
+		this.saldo -= valor;
 	}
 	
-	public boolean transfere(double valor, Conta destino) {
-		if(this.saldo >= valor) {
-			this.saca(valor);
-			destino.deposita(valor);
-			return true;
-		}
-		return false;
+	public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
+		this.saca(valor);
+		destino.deposita(valor);
 	}
 	
 	public double getSaldo() {
