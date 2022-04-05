@@ -3,6 +3,13 @@ package br.com.bytebank.model;
 import br.com.bytebank.AutenticaUtil;
 import br.com.bytebank.interfaces.Autenticavel;
 
+/**
+ * Classe que representa um cliente no ByteBank
+ * 
+ * @author Joao
+ * @version 0.1
+ *
+ */
 public class Cliente extends Pessoa implements Autenticavel {
 	
 	private int senha;
