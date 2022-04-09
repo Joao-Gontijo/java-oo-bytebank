@@ -11,7 +11,7 @@ import br.com.bytebank.model.ContaPoupanca;
 public class TestaArrayList {
 	public static void main(String[] args) {
 		
-		ArrayList lista = new ArrayList();
+		ArrayList<Conta> lista = new ArrayList<Conta>();
 		
 		Conta ce = new ContaEspecial(10, 20);
 		Conta cc = new ContaCorrente(0, 0);
@@ -21,7 +21,7 @@ public class TestaArrayList {
 		lista.add(cc);
 		lista.add(cp);
 		
-		Conta ref = (Conta) lista.get(1);
+		Conta ref = lista.get(1);
 		System.out.println(ref);
 		
 		System.out.println("Tamanho: " + lista.size());
@@ -34,9 +34,8 @@ public class TestaArrayList {
 		
 		System.out.println("-------");
 		
-		for (Object object : lista) {
-			Conta c = (Conta) object;
-			System.out.println("Número da conta: " + c.getNumero());
+		for (Conta conta: lista) {
+			System.out.println("Número da conta: " + conta.getNumero());
 		}
 		
 	}
