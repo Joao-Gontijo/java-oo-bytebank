@@ -1,6 +1,7 @@
 package br.com.bytebank.testes.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class TestaOrdenacaoLista {
 		Cliente clienteCC2 = new Cliente();
 		clienteCC2.setNome("Gabriel");
 		cp1.setTitular(clienteCC2);
-		cc1.deposita(444.0);
+		cp1.deposita(444.0);
 
 		Conta cc2 = new ContaCorrente(22, 11);
 		Cliente clienteCC3 = new Cliente();
@@ -47,6 +48,14 @@ public class TestaOrdenacaoLista {
 		
 		for (Conta conta : lista) {
 			System.out.println("Titular: " + conta.getTitular().getNome() + " - " + conta);
+		}
+		
+		
+		System.out.println("--- Ordenação Natural (primeiro atributo do objeto) ----");
+		Collections.sort(lista);
+		
+		for (Conta conta : lista) {
+			System.out.println(conta.getSaldo());
 		}
 	}
 }
