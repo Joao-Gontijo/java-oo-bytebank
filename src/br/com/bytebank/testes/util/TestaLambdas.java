@@ -51,9 +51,11 @@ public class TestaLambdas {
 				return nome1.compareTo(nome2);
 		});
 		
-		for (Conta conta : lista) {
-			System.out.println("Titular: " + conta.getTitular().getNome() + " - " + conta);
-		}
+//		for (Conta conta : lista) {
+//			System.out.println("Titular: " + conta.getTitular().getNome() + " - " + conta);
+//		}
+		
+		lista.forEach((conta) -> System.out.println(conta.getTitular().getNome()));
 		
 		
 		System.out.println("--- Ordenação Natural (primeiro atributo do objeto) ----");
