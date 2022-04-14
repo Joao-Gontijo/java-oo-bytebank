@@ -1,5 +1,7 @@
 package br.com.bytebank.model;
 
+import java.io.Serializable;
+
 import br.com.bytebank.AutenticaUtil;
 import br.com.bytebank.exception.SaldoInsuficienteException;
 
@@ -10,7 +12,7 @@ import br.com.bytebank.exception.SaldoInsuficienteException;
  * @version 0.1
  *
  */
-public abstract class Conta implements Comparable<Conta>{
+public abstract class Conta implements Comparable<Conta>, Serializable{
 	
 	protected double saldo;
 	private int agencia;

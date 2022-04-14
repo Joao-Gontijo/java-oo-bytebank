@@ -1,5 +1,7 @@
 package br.com.bytebank.model;
 
+import java.io.Serializable;
+
 import br.com.bytebank.AutenticaUtil;
 import br.com.bytebank.interfaces.Autenticavel;
 
@@ -10,12 +12,16 @@ import br.com.bytebank.interfaces.Autenticavel;
  * @version 0.1
  *
  */
-public class Cliente extends Pessoa implements Autenticavel {
+public class Cliente extends Pessoa implements Autenticavel, Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5203764527013543525L;
 	private int senha;
 	private String profissao;
 	
-	private AutenticaUtil autenticador;
+	private transient AutenticaUtil autenticador;
 
 	
 	public Cliente() {

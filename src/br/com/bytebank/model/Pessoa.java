@@ -1,6 +1,12 @@
 package br.com.bytebank.model;
 
-public class Pessoa {
+import java.io.Serializable;
+
+public class Pessoa implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1909121707494268458L;
 	private String nome;
 	private String cpf;
 	
